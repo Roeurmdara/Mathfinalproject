@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Discrete Mathematics - Cryptography</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#3B82F6", secondary: "#6B7280" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+      }
+      .monospace {
+        font-family: "Courier New", monospace;
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+      .tab-btn.active {
+        position: relative;
+      }
+      .tab-btn.active::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #3b82f6;
+        animation: slideIn 0.3s ease-out;
+      }
+      @keyframes slideIn {
+        from {
+          transform: scaleX(0);
+        }
+        to {
+          transform: scaleX(1);
+        }
+      }
+      .fade-in {
+        animation: fadeIn 0.5s ease-out;
+      }
+      .slide-in {
+        animation: slideInFromRight 0.5s ease-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes slideInFromRight {
+        from {
+          transform: translateX(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-gray-50">
+    <nav class="bg-white shadow-sm sticky top-0 z-50 w-full">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <span class="text-2xl font-['Pacifico'] text-primary">logo</span>
+          </div>
+          <div class="flex items-center space-x-4">
+            <a
+              href="./index.html"
+              data-readdy="true"
+              class="text-gray-700 hover:text-primary/80 px-3 py-2 rounded-md text-sm font-medium"
+              >Home</a
+            >
+            <a
+              href="./math.html"
+              data-readdy="true"
+              class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+              >Tools</a
+            >
+            <a
+              href="./aboutus.html"
+              class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+              >About Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="bg-gradient-to-br from-blue-50 to-white py-12">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center">
+          <h1 class="text-4xl font-bold text-gray-800 mb-4">
+            Discrete Mathematics
+          </h1>
+          <p class="text-xl text-gray-600">Cryptography & Number Theory</p>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <div class="bg-white shadow-sm rounded-lg mb-8">
+        <div class="grid grid-cols-3 divide-x divide-gray-200">
+          <button
+            class="tab-btn active p-6 text-center hover:bg-gray-50 transition-colors"
+            data-tab="caesar"
+          >
+            <div
+              class="w-12 h-12 mx-auto mb-3 rounded-full bg-blue-100 flex items-center justify-center"
+            >
+              <i class="ri-lock-line text-primary text-xl"></i>
+            </div>
+            <h3 class="font-medium text-gray-900">Caesar Cipher</h3>
+            <p class="text-sm text-gray-500 mt-1">Shift Cipher Encryption</p>
+          </button>
+          <button
+            class="tab-btn p-6 text-center hover:bg-gray-50 transition-colors"
+            data-tab="vigenere"
+          >
+            <div
+              class="w-12 h-12 mx-auto mb-3 rounded-full bg-gray-100 flex items-center justify-center"
+            >
+              <i class="ri-key-2-line text-gray-600 text-xl"></i>
+            </div>
+            <h3 class="font-medium text-gray-900">Vigenère Cipher</h3>
+            <p class="text-sm text-gray-500 mt-1">
+              Polyalphabetic Substitution
+            </p>
+          </button>
+          <button
+            class="tab-btn p-6 text-center hover:bg-gray-50 transition-colors"
+            data-tab="playfair"
+          >
+            <div
+              class="w-12 h-12 mx-auto mb-3 rounded-full bg-gray-100 flex items-center justify-center"
+            >
+              <i class="ri-grid-line text-gray-600 text-xl"></i>
+            </div>
+            <h3 class="font-medium text-gray-900">Playfair Cipher</h3>
+            <p class="text-sm text-gray-500 mt-1">Digraph Substitution</p>
+          </button>
+        </div>
+      </div>
+      <main>
+        <!-- Caesar Cipher Tab -->
+        <div class="tab-content active" id="caesar-tab">
+          <div class="grid md:grid-cols-2 gap-8 fade-in">
+            <div class="space-y-6 bg-white shadow-sm rounded-lg p-6">
+              <div>
+                <label
+                  for="caesar-message"
+                  class="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2"
+                >
+                  <i class="ri-message-2-line"></i> Plain Text
+                </label>
+                <textarea
+                  id="caesar-message"
+                  placeholder="Enter your message here..."
+                  class="w-full min-h-[240px] p-4 bg-white/50 border border-gray-100 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all resize-none"
+                ></textarea>
+              </div>
+              <div>
+                <label
+                  for="caesar-key"
+                  class="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2"
+                >
+                  <i class="ri-key-2-line"></i> Key (number)
+                </label>
+                <div class="relative max-w-xs">
+                  <input
+                    type="number"
+                    id="caesar-key"
+                    placeholder="Enter a number"
+                    class="w-full h-12 px-4 bg-white/50 border border-gray-100 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all"
+                  />
+                  <p
+                    id="caesar-key-error"
+                    class="hidden text-red-500 text-sm mt-1"
+                  >
+                    Please enter a valid number
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <button
+                  id="caesar-encrypt-btn"
+                  class="h-12 px-8 bg-primary text-white rounded flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                >
+                  <i class="ri-lock-2-line"></i> Encrypt
+                </button>
+                <button
+                  id="caesar-decrypt-btn"
+                  class="h-12 px-8 border border-primary text-primary rounded flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors"
+                >
+                  <i class="ri-lock-unlock-line"></i> Decrypt
+                </button>
+                <button
+                  id="caesar-clear-btn"
+                  class="h-12 px-8 border border-gray-300 text-gray-700 rounded flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors"
+                >
+                  <i class="ri-refresh-line"></i> Clear
+                </button>
+              </div>
+            </div>
+            <div
+              class="result-area bg-white p-6 rounded-lg shadow-sm monospace text-lg"
+              id="caesar-result"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Vigenere Cipher Tab -->
+        <div class="tab-content hidden fade-in" id="vigenere-tab">
+          <div class="grid md:grid-cols-2 gap-8 fade-in">
+            <div class="space-y-6 bg-white shadow-sm rounded-lg p-6">
+              <div>
+                <label
+                  for="vigenere-message"
+                  class="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2"
+                >
+                  <i class="ri-message-2-line"></i> Text
+                </label>
+                <textarea
+                  id="vigenere-message"
+                  placeholder="Enter your message here..."
+                  class="w-full min-h-[240px] p-4 bg-white/50 border border-gray-100 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all resize-none"
+                ></textarea>
+              </div>
+              <div>
+                <label
+                  for="vigenere-key"
+                  class="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2"
+                >
+                  <i class="ri-key-2-line"></i> Key (letters only)
+                </label>
+                <div class="relative max-w-xs">
+                  <input
+                    type="text"
+                    id="vigenere-key"
+                    placeholder="Enter a keyword (letters only)"
+                    class="w-full h-12 px-4 bg-white/50 border border-gray-100 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all"
+                  />
+                  <p
+                    id="vigenere-key-error"
+                    class="hidden text-red-500 text-sm mt-1"
+                  >
+                    Please enter a valid key (letters only)
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <button
+                  id="vigenere-encrypt-btn"
+                  class="h-12 px-8 bg-primary text-white rounded flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                >
+                  <i class="ri-lock-2-line"></i> Encrypt
+                </button>
+                <button
+                  id="vigenere-decrypt-btn"
+                  class="h-12 px-8 border border-primary text-primary rounded flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors"
+                >
+                  <i class="ri-lock-unlock-line"></i> Decrypt
+                </button>
+                <button
+                  id="vigenere-clear-btn"
+                  class="h-12 px-8 border border-gray-300 text-gray-700 rounded flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors"
+                >
+                  <i class="ri-refresh-line"></i> Clear
+                </button>
+              </div>
+            </div>
+            <div
+              class="result-area bg-white p-6 rounded-lg shadow-sm monospace text-lg"
+              id="vigenere-result"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Playfair Cipher Tab -->
+        <div class="tab-content hidden fade-in" id="playfair-tab">
+          <div class="text-center py-12 text-gray-500">
+            <p class="text-xl">Playfair cipher coming soon!</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Tabs logic
+        const tabButtons = document.querySelectorAll(".tab-btn");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const target = btn.getAttribute("data-tab");
+
+            // Remove active class on all buttons and contents
+            tabButtons.forEach((b) => b.classList.remove("active"));
+            tabContents.forEach((c) => {
+              c.classList.add("hidden");
+              c.classList.remove("active");
+            });
+
+            // Add active class to clicked button
+            btn.classList.add("active");
+
+            // Show the target tab content
+            const activeTab = document.getElementById(`${target}-tab`);
+            activeTab.classList.remove("hidden");
+            activeTab.classList.add("active");
+          });
+        });
+
+        // --- Caesar Cipher Elements ---
+        const caesarMessageInput = document.getElementById("caesar-message");
+        const caesarKeyInput = document.getElementById("caesar-key");
+        const caesarEncryptBtn = document.getElementById("caesar-encrypt-btn");
+        const caesarDecryptBtn = document.getElementById("caesar-decrypt-btn");
+        const caesarClearBtn = document.getElementById("caesar-clear-btn");
+        const caesarResultArea = document.getElementById("caesar-result");
+        const caesarKeyError = document.getElementById("caesar-key-error");
+
+        function caesarCipher(text, key, decrypt = false) {
+          if (text.trim() === "") return "";
+          let shift = parseInt(key);
+          if (isNaN(shift)) return "Please enter a valid numeric key";
+          shift = ((shift % 26) + 26) % 26;
+          if (decrypt) shift = (26 - shift) % 26;
+
+          return text
+            .split("")
+            .map((char) => {
+              if (/[a-zA-Z]/.test(char)) {
+                const code = char.charCodeAt(0);
+                if (code >= 65 && code <= 90) {
+                  return String.fromCharCode(((code - 65 + shift) % 26) + 65);
+                }
+                if (code >= 97 && code <= 122) {
+                  return String.fromCharCode(((code - 97 + shift) % 26) + 97);
+                }
+              }
+              return char;
+            })
+            .join("");
+        }
+
+        function validateCaesarKey() {
+          if (caesarKeyInput.value.trim() === "" || isNaN(caesarKeyInput.value)) {
+            caesarKeyInput.classList.add("border-red-500");
+            caesarKeyError.classList.remove("hidden");
+            return false;
+          } else {
+            caesarKeyInput.classList.remove("border-red-500");
+            caesarKeyError.classList.add("hidden");
+            return true;
+          }
+        }
+
+        caesarKeyInput.addEventListener("input", validateCaesarKey);
+
+        caesarEncryptBtn.addEventListener("click", function () {
+          if (!validateCaesarKey()) return;
+          const encrypted = caesarCipher(caesarMessageInput.value, caesarKeyInput.value, false);
+          caesarResultArea.textContent = encrypted;
+        });
+
+        caesarDecryptBtn.addEventListener("click", function () {
+          if (!validateCaesarKey()) return;
+          const decrypted = caesarCipher(caesarMessageInput.value, caesarKeyInput.value, true);
+          caesarResultArea.textContent = decrypted;
+        });
+
+        caesarClearBtn.addEventListener("click", function () {
+          caesarMessageInput.value = "";
+          caesarKeyInput.value = "";
+          caesarResultArea.textContent = "";
+          caesarKeyInput.classList.remove("border-red-500");
+          caesarKeyError.classList.add("hidden");
+        });
+
+        // --- Vigenère Cipher Elements ---
+        const vigenereMessageInput = document.getElementById("vigenere-message");
+        const vigenereKeyInput = document.getElementById("vigenere-key");
+        const vigenereEncryptBtn = document.getElementById("vigenere-encrypt-btn");
+        const vigenereDecryptBtn = document.getElementById("vigenere-decrypt-btn");
+        const vigenereClearBtn = document.getElementById("vigenere-clear-btn");
+        const vigenereResultArea = document.getElementById("vigenere-result");
+        const vigenereKeyError = document.getElementById("vigenere-key-error");
+
+        // Vigenère cipher function
+        // Only encrypts/decrypts letters, ignores others but keeps them
+        // Case-preserving
+        function vigenereCipher(text, key, decrypt = false) {
+          if (text.trim() === "") return "";
+
+          key = key.toUpperCase().replace(/[^A-Z]/g, "");
+          if (key.length === 0) return "Please enter a valid key (letters only)";
+
+          let result = "";
+          let keyIndex = 0;
+          for (let i = 0; i < text.length; i++) {
+            const char = text[i];
+            if (/[a-zA-Z]/.test(char)) {
+              const charCode = char.charCodeAt(0);
+              const keyCharCode = key.charCodeAt(keyIndex % key.length) - 65;
+              let base = charCode >= 65 && charCode <= 90 ? 65 : 97;
+
+              if (decrypt) {
+                // Decryption shifts backwards
+                const shifted =
+                  (charCode - base - keyCharCode + 26) % 26 + base;
+                result += String.fromCharCode(shifted);
+              } else {
+                // Encryption shifts forwards
+                const shifted =
+                  (charCode - base + keyCharCode) % 26 + base;
+                result += String.fromCharCode(shifted);
+              }
+              keyIndex++;
+            } else {
+              result += char;
+            }
+          }
+          return result;
+        }
+
+        function validateVigenereKey() {
+          if (!/^[a-zA-Z]+$/.test(vigenereKeyInput.value.trim())) {
+            vigenereKeyInput.classList.add("border-red-500");
+            vigenereKeyError.classList.remove("hidden");
+            return false;
+          } else {
+            vigenereKeyInput.classList.remove("border-red-500");
+            vigenereKeyError.classList.add("hidden");
+            return true;
+          }
+        }
+
+        vigenereKeyInput.addEventListener("input", validateVigenereKey);
+
+        vigenereEncryptBtn.addEventListener("click", function () {
+          if (!validateVigenereKey()) return;
+          const encrypted = vigenereCipher(vigenereMessageInput.value, vigenereKeyInput.value, false);
+          vigenereResultArea.textContent = encrypted;
+        });
+
+        vigenereDecryptBtn.addEventListener("click", function () {
+          if (!validateVigenereKey()) return;
+          const decrypted = vigenereCipher(vigenereMessageInput.value, vigenereKeyInput.value, true);
+          vigenereResultArea.textContent = decrypted;
+        });
+
+        vigenereClearBtn.addEventListener("click", function () {
+          vigenereMessageInput.value = "";
+          vigenereKeyInput.value = "";
+          vigenereResultArea.textContent = "";
+          vigenereKeyInput.classList.remove("border-red-500");
+          vigenereKeyError.classList.add("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

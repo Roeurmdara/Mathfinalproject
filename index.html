@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discrete Mathematics - Home</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#3B82F6", secondary: "#6B7280" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #ffffff;
+      }
+      .hero-bg {
+        background-image: url("");
+        background-size: cover;
+        background-position: center right;
+      }
+      .tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1),
+          0 8px 10px -6px rgba(59, 130, 246, 0.05);
+      }
+      .feature-card:hover {
+        transform: translateY(-3px);
+      }
+      .quick-access-card:hover {
+        transform: translateY(-3px);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="bg-blue-100 shadow-sm sticky top-0 z-50 w-full">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <span class="text-2xl font-['Pacifico'] text-primary">logo</span>
+          </div>
+          <div class="flex items-center space-x-4">
+            <a
+              href=""
+              data-readdy="true"
+              class="text-primary hover:text-primary/80 px-3 py-2 rounded-md text-sm font-medium"
+              >Home</a
+            >
+            <a
+              href="./math.html"
+              data-readdy="true"
+              class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+              >Tools</a
+            >
+            <a
+              href="./aboutus.html"
+              class="text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+              >About Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section
+      class="hero-bg h-screen flex items-center w-full relative overflow-hidden"
+    >
+      <!-- YouTube Background Video -->
+      <div class="absolute inset-0 overflow-hidden -z-10">
+        <iframe
+          class="w-full h-full absolute top-0 left-0 pointer-events-none"
+          src="https://www.youtube.com/embed/W9KHVlnJLjQ?controls=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0&autoplay=1&mute=1&loop=1&playlist=W9KHVlnJLjQ"
+          frameborder="0"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+        ></iframe>
+        <!-- Optional dark overlay -->
+        <div class="absolute inset-0 bg-black/50 z-[-5]"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
+        <div class="max-w-2xl py-20 text-white">
+          <h1 class="text-5xl font-bold mb-6">Discrete Mathematics Tools</h1>
+          <p class="text-xl mb-8">
+            Explore cryptography, number theory, and other mathematical concepts
+            with our interactive tools and resources.
+          </p>
+          <p class="mb-8">
+            Welcome to our comprehensive platform for discrete mathematics.
+            Whether you're a student, educator, or enthusiast, our tools will
+            help you understand complex mathematical concepts through practical
+            applications.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="#tools"
+              class="bg-primary text-white px-6 py-3 rounded !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >Explore Tools</a
+            >
+            <a
+              href=""
+              class="bg-white text-gray-800 px-6 py-3 rounded !rounded-button font-medium border border-gray-200 hover:bg-gray-50 transition-colors whitespace-nowrap"
+              >Learn More</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="tools" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Mathematical Tools
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Powerful tools to help you understand and apply discrete mathematics
+            concepts in cryptography and beyond.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <a
+            href="./math.html"
+            data-readdy="true"
+            class="tool-card bg-white rounded-lg shadow-sm border border-gray-100 p-8 transition-all duration-300 hover:border-primary/20"
+          >
+            <div
+              class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="ri-lock-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+              Caesar Cipher
+            </h3>
+            <p class="text-gray-600 mb-6 text-center">
+              A substitution cipher where each letter is replaced by a letter
+              some fixed number of positions down the alphabet.
+            </p>
+            <div class="text-center">
+              <span
+                class="inline-flex items-center justify-center px-5 py-2 border border-primary text-primary rounded !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap"
+                >Try Now</span
+              >
+            </div>
+          </a>
+          <div
+            class="tool-card bg-white rounded-lg shadow-sm border border-gray-100 p-8 transition-all duration-300 hover:border-primary/20"
+          >
+            <div
+              class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="ri-key-2-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+              Vigenère Cipher
+            </h3>
+            <p class="text-gray-600 mb-6 text-center">
+              A method of encrypting alphabetic text by using a simple form of
+              polyalphabetic substitution with a keyword.
+            </p>
+            <div class="text-center">
+              <a href="./math.html">
+                <span
+                  class="inline-flex items-center justify-center px-5 py-2 border border-primary text-primary rounded !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap"
+                >
+                  Try Now
+                </span>
+              </a>
+            </div>
+          </div>
+          <div
+            class="tool-card bg-white rounded-lg shadow-sm border border-gray-100 p-8 transition-all duration-300 hover:border-primary/20"
+          >
+            <div
+              class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="ri-grid-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">
+              Playfair Cipher
+            </h3>
+            <p class="text-gray-600 mb-6 text-center">
+              A manual symmetric encryption technique that uses a 5×5 grid of
+              letters for digraph substitution.
+            </p>
+            <div class="text-center">
+              <span
+                class="inline-flex items-center justify-center px-5 py-2 border border-gray-200 text-gray-700 rounded !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap"
+                >Coming Soon</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">
+            Featured Content
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Explore our curated content to deepen your understanding of discrete
+            mathematics.
+          </p>
+        </div>
+        <div class="space-y-16">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                Introduction to Cryptography
+              </h3>
+              <p class="text-gray-600 mb-6">
+                Cryptography is the practice and study of techniques for secure
+                communication in the presence of adversarial behavior. Learn
+                about the fundamental principles and historical development of
+                encryption methods.
+              </p>
+              <a
+                href="https://www.geeksforgeeks.org/cryptography-introduction/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-primary hover:text-primary/80"
+              >
+                Learn More
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <img
+                src="https://readdy.ai/api/search-image?query=A%2520professional%2520illustration%2520of%2520cryptography%2520concepts%2520with%2520abstract%2520lock%2520symbols%252C%2520binary%2520code%252C%2520and%2520encryption%2520keys.%2520The%2520image%2520should%2520have%2520a%2520clean%2520blue%2520and%2520white%2520color%2520scheme%2520with%2520geometric%2520patterns%2520representing%2520data%2520security.%2520Professional%2520and%2520educational%2520style%2520suitable%2520for%2520a%2520mathematics%2520website.&width=600&height=400&seq=2&orientation=landscape"
+                alt="Cryptography Illustration"
+                class="w-full h-auto rounded object-cover object-top"
+              />
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="order-2 md:order-1 bg-white p-6 rounded-lg shadow-sm">
+              <img
+                src="https://readdy.ai/api/search-image?query=A%2520professional%2520illustration%2520of%2520number%2520theory%2520concepts%2520with%2520prime%2520numbers%252C%2520mathematical%2520formulas%252C%2520and%2520abstract%2520numerical%2520patterns.%2520The%2520image%2520should%2520have%2520a%2520clean%2520blue%2520and%2520white%2520color%2520scheme%2520with%2520geometric%2520arrangements%2520of%2520numbers.%2520Professional%2520and%2520educational%2520style%2520suitable%2520for%2520a%2520mathematics%2520website.&width=600&height=400&seq=3&orientation=landscape"
+                alt="Number Theory Illustration"
+                class="w-full h-auto rounded object-cover object-top"
+              />
+            </div>
+            <section id="numbers" class="order-1 md:order-2">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                Number Theory Basics
+              </h3>
+              <p class="text-gray-600 mb-6">
+                Number theory is the branch of mathematics concerned with the
+                study of integers and their properties. Discover the fascinating
+                world of prime numbers, modular arithmetic, and their
+                applications in cryptography.
+              </p>
+              <a
+                href="https://www.mathsisfun.com/numbers/number-theory-intro.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-primary hover:text-primary/80"
+              >
+                Learn More
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </section>
+          </div>
+
+          <section id="" class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 class="text-2xl font-semibold text-gray-900 mb-4">
+                Mathematical Foundations
+              </h3>
+              <p class="text-gray-600 mb-6">
+                Explore the core mathematical concepts that form the foundation
+                of discrete mathematics, including set theory, logic,
+                combinatorics, and graph theory. These principles are essential
+                for understanding advanced topics in computer science and
+                cryptography.
+              </p>
+              <a
+                href="https://en.wikipedia.org/wiki/Foundations_of_mathematics"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-primary hover:text-primary/80"
+              >
+                Learn More
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <img
+                src="https://readdy.ai/api/search-image?query=A%2520professional%2520illustration%2520of%2520mathematical%2520foundations%2520with%2520abstract%2520representations%2520of%2520set%2520theory%252C%2520logic%2520gates%252C%2520and%2520graph%2520theory.%2520The%2520image%2520should%2520have%2520a%2520clean%2520blue%2520and%2520white%2520color%2520scheme%2520with%2520geometric%2520patterns%2520representing%2520mathematical%2520structures.%2520Professional%2520and%2520educational%2520style%2520suitable%2520for%2520a%2520mathematics%2520website.&width=600&height=400&seq=4&orientation=landscape"
+                alt="Mathematical Foundations Illustration"
+                class="w-full h-auto rounded object-cover object-top"
+              />
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Quick Access</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Resources to enhance your learning experience.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="quick-access-card bg-white rounded-lg shadow-sm border border-gray-100 p-6 transition-all duration-300 hover:border-primary/20"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4"
+            >
+              <i class="ri-book-open-line text-primary text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Practice Problems
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Test your knowledge with our collection of practice problems and
+              exercises.
+            </p>
+            <a
+              href="https://www.math.uci.edu/~mathcircle/materials/M9L1.pdf"
+              class="text-primary hover:text-primary/80 text-sm font-medium"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore Problems
+            </a>
+          </div>
+          <div
+            class="quick-access-card bg-white rounded-lg shadow-sm border border-gray-100 p-6 transition-all duration-300 hover:border-primary/20"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4"
+            >
+              <i class="ri-video-line text-primary text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Video Tutorials
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Watch step-by-step explanations of key concepts and
+              problem-solving techniques.
+            </p>
+            <a
+              href="https://www.youtube.com/watch?v=2aHkqB2-46k&list=PL2jrku-ebl3H50FiEPr4erSJiJHURM9BX"
+              class="text-primary hover:text-primary/80 text-sm font-medium"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Watch Tutorials
+            </a>
+          </div>
+          <div
+            class="quick-access-card bg-white rounded-lg shadow-sm border border-gray-100 p-6 transition-all duration-300 hover:border-primary/20"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4"
+            >
+              <i class="ri-file-text-line text-primary text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Documentation
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Access comprehensive documentation and reference materials for all
+              our tools.
+            </p>
+            <a
+              href="https://www.researchgate.net/publication/373272054_Mathematics_for_Cryptography_A_Guide_to_Mathematical_Fundamentals_of_Different_Classes_of_Cryptography_Algorithms"
+              class="text-primary hover:text-primary/80 text-sm font-medium"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Documentation
+            </a>
+          </div>
+          <div
+            class="quick-access-card bg-white rounded-lg shadow-sm border border-gray-100 p-6 transition-all duration-300 hover:border-primary/20"
+          >
+            <div
+              class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4"
+            >
+              <i class="ri-discuss-line text-primary text-xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">
+              Community Forum
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Join discussions, ask questions, and share insights with fellow
+              learners.
+            </p>
+            <a
+              href=""
+              class="text-primary hover:text-primary/80 text-sm font-medium"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Join Community
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            Ready to Master Discrete Mathematics?
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Our interactive tools and comprehensive resources make learning
+            discrete mathematics engaging and accessible. Start your journey
+            today and discover the fascinating world of mathematical concepts
+            that power modern cryptography and computer science.
+          </p>
+          <a
+            href="#tools"
+            class="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap"
+            >Get Started</a
+          >
+        </div>
+      </div>
+    </section>
+    <footer class="bg-blue-100 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div>
+            <div class="text-2xl font-['Pacifico'] text-primary mb-4">logo</div>
+            <p class="text-gray-600 mb-4">
+              A comprehensive platform for exploring discrete mathematics
+              concepts through interactive tools and resources.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-primary"
+              >
+                <i class="ri-twitter-x-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-primary"
+              >
+                <i class="ri-facebook-circle-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-primary"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a
+                href="#"
+                class="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-primary"
+              >
+                <i class="ri-github-line"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+              Quick Links
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#tools"
+                  data-readdy="true"
+                  class="text-gray-600 hover:text-primary"
+                  >Cryptography Tools</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#numbers"
+                  data-readdy="true"
+                  class="text-gray-600 hover:text-primary"
+                  >Number Theory</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.math.uci.edu/~mathcircle/materials/M9L1.pdf"
+                  class="text-gray-600 hover:text-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learning Resources
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.edx.org/learn/cryptography"
+                  class="text-gray-600 hover:text-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Practice Problems
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.math.uci.edu/~mathcircle/materials/M9L1.pdf"
+                  class="text-gray-600 hover:text-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  About Us
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Contact Us</h3>
+            <ul class="space-y-2">
+              <li class="flex items-start">
+                <i class="ri-mail-line text-primary mt-1 mr-2"></i>
+                <span class="text-gray-600">iroffice(at)rupp.edu.kh</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-phone-line text-primary mt-1 mr-2"></i>
+                <span class="text-gray-600">855-23-883-640</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-map-pin-line text-primary mt-1 mr-2"></i>
+                <span class="text-gray-600"
+                  >The Royal University of Phnom Penh Russian Federation
+                  Boulevard, Toul Kork, Phnom Penh, Cambodia.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-gray-200 text-center">
+          <p class="text-gray-500 text-sm">
+            © 2025 Discrete Mathematics Learning Platform. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script id="scroll-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
