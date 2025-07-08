@@ -24,6 +24,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
     />
+    <link rel="icon" href="../image/fe01.png" type="image/x-icon" />
     <script>
       tailwind.config = {
         theme: {
@@ -174,8 +175,7 @@
               Polyalphabetic Substitution
             </p>
           </button>
-         <button
-  class="tab-btn p-6 text-center hover:bg-gray-50 transition-colors"
+         <button class="tab-btn p-6 text-center hover:bg-gray-50 transition-colors"
   data-tab="rsa"
 >
   <div
@@ -256,6 +256,9 @@
           </div>
         </div>
 
+
+
+
         <!-- Vigenere Cipher Tab -->
         <div class="tab-content hidden fade-in" id="vigenere-tab">
           <div class="grid md:grid-cols-2 gap-8 fade-in">
@@ -322,6 +325,11 @@
             ></div>
           </div>
         </div>
+
+
+
+
+
 <!-- RSA Cipher Tab - Add this after the Vigenère Cipher Tab -->
 <div class="tab-content hidden fade-in" id="rsa-tab">
   <div class="grid md:grid-cols-2 gap-8 fade-in">
@@ -588,6 +596,10 @@
         </div>
       </div>
     </footer>
+
+
+
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         // Tabs logic
@@ -762,6 +774,10 @@
           vigenereKeyError.classList.add("hidden");
         });
       });
+
+
+
+
       // --- RSA Cipher Elements ---
 const rsaMessageInput = document.getElementById("rsa-message");
 const rsaPublicKeyInput = document.getElementById("rsa-public-key");
@@ -772,8 +788,8 @@ const rsaClearBtn = document.getElementById("rsa-clear-btn");
 const rsaGenerateKeysBtn = document.getElementById("rsa-generate-keys-btn");
 const rsaResultArea = document.getElementById("rsa-result");
 const rsaKeyError = document.getElementById("rsa-key-error");
-
-// RSA utility functions
+     
+       // RSA utility functions
 function gcd(a, b) {
   while (b !== 0) {
     let temp = b;
@@ -945,6 +961,7 @@ function validateRSAKeys() {
   rsaKeyError.classList.add("hidden");
   return true;
 }
+
 
 // Event listeners
 rsaPublicKeyInput.addEventListener("input", validateRSAKeys);
