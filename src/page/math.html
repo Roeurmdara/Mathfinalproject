@@ -107,7 +107,7 @@
       }
     </style>
   </head>
-  <body class="min-h-screen bg-gray-50">
+ <body class="min-h-screen bg-gray-50">
     <nav class="bg-blue-200 shadow-sm sticky top-0 z-50 w-full">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
@@ -139,9 +139,7 @@
     <div class="bg-gradient-to-br from-blue-50 to-white py-12">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center">
-          <h1 class="text-4xl font-bold text-gray-800 mb-4">
-            Discrete Mathematics
-          </h1>
+          <h1 class="text-4xl font-bold text-gray-800 mb-4">Discrete Mathematics</h1>
           <p class="text-xl text-gray-600">Cryptography & Number Theory</p>
         </div>
       </div>
@@ -171,21 +169,17 @@
               <i class="ri-key-2-line text-gray-600 text-xl"></i>
             </div>
             <h3 class="font-medium text-gray-900">Vigenère Cipher</h3>
-            <p class="text-sm text-gray-500 mt-1">
-              Polyalphabetic Substitution
-            </p>
+            <p class="text-sm text-gray-500 mt-1">Polyalphabetic Substitution</p>
           </button>
-         <button class="tab-btn p-6 text-center hover:bg-gray-50 transition-colors"
-  data-tab="rsa"
->
-  <div
-    class="w-12 h-12 mx-auto mb-3 rounded-full bg-gray-100 flex items-center justify-center"
-  >
-    <i class="ri-shield-keyhole-line text-gray-600 text-xl"></i>
-  </div>
-  <h3 class="font-medium text-gray-900">RSA Cipher</h3>
-  <p class="text-sm text-gray-500 mt-1">Public Key Cryptography</p>
-</button>
+          <button class="tab-btn p-6 text-center hover:bg-gray-50 transition-colors" data-tab="rsa">
+            <div
+              class="w-12 h-12 mx-auto mb-3 rounded-full bg-gray-100 flex items-center justify-center"
+            >
+              <i class="ri-shield-keyhole-line text-gray-600 text-xl"></i>
+            </div>
+            <h3 class="font-medium text-gray-900">RSA Cipher</h3>
+            <p class="text-sm text-gray-500 mt-1">Public Key Cryptography</p>
+          </button>
         </div>
       </div>
       <main>
@@ -220,10 +214,7 @@
                     placeholder="Enter a number"
                     class="w-full h-12 px-4 bg-white/50 border border-gray-100 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all"
                   />
-                  <p
-                    id="caesar-key-error"
-                    class="hidden text-red-500 text-sm mt-1"
-                  >
+                  <p id="caesar-key-error" class="hidden text-red-500 text-sm mt-1">
                     Please enter a valid number
                   </p>
                 </div>
@@ -255,10 +246,6 @@
             ></div>
           </div>
         </div>
-
-
-
-
         <!-- Vigenere Cipher Tab -->
         <div class="tab-content hidden fade-in" id="vigenere-tab">
           <div class="grid md:grid-cols-2 gap-8 fade-in">
@@ -290,10 +277,7 @@
                     placeholder="Enter a keyword (letters only)"
                     class="w-full h-12 px-4 bg-white/50 border border-gray-100 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all"
                   />
-                  <p
-                    id="vigenere-key-error"
-                    class="hidden text-red-500 text-sm mt-1"
-                  >
+                  <p id="vigenere-key-error" class="hidden text-red-500 text-sm mt-1">
                     Please enter a valid key (letters only)
                   </p>
                 </div>
@@ -325,168 +309,164 @@
             ></div>
           </div>
         </div>
-
-
-
-
-
-<!-- RSA Cipher Tab - Add this after the Vigenère Cipher Tab -->
-<div class="tab-content hidden fade-in" id="rsa-tab">
-  <div class="grid md:grid-cols-2 gap-8 fade-in">
-    <div class="space-y-6 bg-white shadow-sm rounded-lg p-6">
-      <div>
-        <label
-          for="rsa-message"
-          class="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2"
-        >
-          <i class="ri-message-2-line"></i> Text
-        </label>
-        <textarea
-          id="rsa-message"
-          placeholder="Enter your message here..."
-          class="w-full min-h-[160px] p-4 bg-white/50 border border-gray-100 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all resize-none"
-        ></textarea>
-      </div>
-      
-      <div class="grid grid-cols-1 gap-4">
-        <div>
-          <label
-            for="rsa-public-key"
-            class="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2"
-          >
-            <i class="ri-key-2-line"></i> Public Key (n,e)
-          </label>
-          <input
-            type="text"
-            id="rsa-public-key"
-            placeholder="e.g., 323,3"
-            class="w-full h-12 px-4 bg-white/50 border border-gray-100 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all"
-          />
+        <!-- RSA Cipher Tab -->
+        <div class="tab-content hidden fade-in" id="rsa-tab">
+          <div class="grid md:grid-cols-2 gap-8 fade-in">
+            <div class="space-y-6 bg-white shadow-sm rounded-lg p-6">
+              <div>
+                <label
+                  for="rsa-message"
+                  class="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2"
+                >
+                  <i class="ri-message-2-line"></i> Text
+                </label>
+                <textarea
+                  id="rsa-message"
+                  placeholder="Enter your message (for encryption) or comma-separated numbers (for decryption)..."
+                  class="w-full min-h-[160px] p-4 bg-white/50 border border-gray-100 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all resize-none"
+                ></textarea>
+              </div>
+              <div class="grid grid-cols-1 gap-4">
+                <div>
+                  <label
+                    for="rsa-public-key"
+                    class="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2"
+                  >
+                    <i class="ri-key-2-line"></i> Public Key (n,e)
+                  </label>
+                  <input
+                    type="text"
+                    id="rsa-public-key"
+                    placeholder="e.g., 2537,13"
+                    class="w-full h-12 px-4 bg-white/50 border border-gray-100 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="rsa-private-key"
+                    class="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2"
+                  >
+                    <i class="ri-key-line"></i> Private Key (n,d)
+                  </label>
+                  <input
+                    type="text"
+                    id="rsa-private-key"
+                    placeholder="e.g., 2537,107"
+                    class="w-full h-12 px-4 bg-white/50 border border-gray-100 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all"
+                  />
+                </div>
+                <p id="rsa-key-error" class="hidden text-red-500 text-sm">
+                  Please enter valid keys in the format n,e or n,d
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-3">
+                <button
+                  id="rsa-generate-keys-btn"
+                  class="h-12 px-6 bg-primary text-white rounded flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                >
+                  <i class="ri-key-2-fill"></i> Generate Keys
+                </button>
+                <button
+                  id="rsa-encrypt-btn"
+                  class="h-12 px-6 bg-primary text-white rounded flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                >
+                  <i class="ri-lock-2-line"></i> Encrypt
+                </button>
+                <button
+                  id="rsa-decrypt-btn"
+                  class="h-12 px-6 border border-primary text-primary rounded flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors"
+                >
+                  <i class="ri-lock-unlock-line"></i> Decrypt
+                </button>
+                <button
+                  id="rsa-clear-btn"
+                  class="h-12 px-6 border border-gray-300 text-gray-700 rounded flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors"
+                >
+                  <i class="ri-refresh-line"></i> Clear
+                </button>
+              </div>
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <p class="text-sm text-blue-800">
+                  <strong>Note:</strong> This is a simplified RSA implementation for educational purposes. It handles
+                  alphabetic characters (A-Z, a-z) by converting them to 2-digit numbers (00-25) and then grouping
+                  these into 4-digit blocks for encryption/decryption. For real-world secure encryption, much larger
+                  keys and dedicated cryptographic libraries are required.
+                </p>
+              </div>
+            </div>
+            <div
+              class="result-area bg-white p-6 rounded-lg shadow-sm monospace text-lg break-all"
+              id="rsa-result"
+            ></div>
+          </div>
         </div>
-        
-        <div>
-          <label
-            for="rsa-private-key"
-            class="block text-sm font-medium text-gray-700 mb-2 flex items-center gap-2"
-          >
-            <i class="ri-key-line"></i> Private Key (n,d)
-          </label>
-          <input
-            type="text"
-            id="rsa-private-key"
-            placeholder="e.g., 323,107"
-            class="w-full h-12 px-4 bg-white/50 border border-gray-100 rounded-lg focus:ring-2 focus:ring-primary outline-none transition-all"
-          />
-        </div>
-        
-        <p
-          id="rsa-key-error"
-          class="hidden text-red-500 text-sm"
-        >
-          Please enter valid keys in the format n,e or n,d
-        </p>
-      </div>
-      
-      <div class="flex flex-wrap gap-3">
-        <button
-          id="rsa-generate-keys-btn"
-          class="h-12 px-6 bg-primary text-white rounded flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
-        >
-          <i class="ri-key-2-fill"></i> Generate Keys
-        </button>
-        
-        <button
-          id="rsa-encrypt-btn"
-          class="h-12 px-6 bg-primary text-white rounded flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
-        >
-          <i class="ri-lock-2-line"></i> Encrypt
-        </button>
-        
-        <button
-          id="rsa-decrypt-btn"
-          class="h-12 px-6 border border-primary text-primary rounded flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors"
-        >
-          <i class="ri-lock-unlock-line"></i> Decrypt
-        </button>
-        
-        <button
-          id="rsa-clear-btn"
-          class="h-12 px-6 border border-gray-300 text-gray-700 rounded flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors"
-        >
-          <i class="ri-refresh-line"></i> Clear
-        </button>
-      </div>
-      
-      <div class="bg-blue-50 p-4 rounded-lg">
-        <p class="text-sm text-blue-800">
-          <strong>Note:</strong> This is a simplified RSA implementation for educational purposes. 
-          For encryption, enter text in the message field and use the public key. 
-          For decryption, enter comma-separated numbers and use the private key.
-        </p>
-      </div>
-    </div>
-    
-    <div
-      class="result-area bg-white p-6 rounded-lg shadow-sm monospace text-lg break-all"
-      id="rsa-result"
-    ></div>
-  </div>
-</div>
-       
         <div class="max-w-6xl mx-auto mt-10 space-y-4">
-  <div class="border rounded-lg overflow-hidden">
-    <button class="w-full px-6 py-4 text-left flex justify-between items-center font-semibold text-lg bg-gray-100 hover:bg-gray-200 transition" onclick="toggleAccordion(this)">
-      What is a Cipher?
-      <span class="transform transition-transform duration-300">&#9662;</span>
-    </button>
-    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white px-6">
-      <p class="py-4 text-gray-700">
-        A cipher is an algorithm for performing encryption or
-        decryption—a series of well-defined steps that can be followed
-        to encrypt or decrypt a message.
-      </p>
-    </div>
-  </div>
+          <div class="border rounded-lg overflow-hidden">
+            <button
+              class="w-full px-6 py-4 text-left flex justify-between items-center font-semibold text-lg bg-gray-100 hover:bg-gray-200 transition"
+              onclick="toggleAccordion(this)"
+            >
+              What is a Cipher?
+              <span class="transform transition-transform duration-300">&#9662;</span>
+            </button>
+            <div
+              class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white px-6"
+            >
+              <p class="py-4 text-gray-700">
+               A cipher is a method used to encrypt or decrypt information so that it becomes unreadable to unauthorized users. In simple terms, a cipher converts plain text (readable data) into ciphertext (coded data) and vice versa.
+              </p>
+            </div>
+          </div>
+          <div class="border rounded-lg overflow-hidden">
+            <button
+              class="w-full px-6 py-4 text-left flex justify-between items-center font-semibold text-lg bg-gray-100 hover:bg-gray-200 transition"
+              onclick="toggleAccordion(this)"
+            >
+              How does the Caesar Cipher work?
+              <span class="transform transition-transform duration-300">&#9662;</span>
+            </button>
+            <div
+              class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white px-6"
+            >
+              <p class="py-4 text-gray-700">
+                🔄 How It Works:
+Choose a shift value (e.g., +3)
 
-  <div class="border rounded-lg overflow-hidden">
-    <button class="w-full px-6 py-4 text-left flex justify-between items-center font-semibold text-lg bg-gray-100 hover:bg-gray-200 transition" onclick="toggleAccordion(this)">
-      How does the Caesar Cipher work?
-      <span class="transform transition-transform duration-300">&#9662;</span>
-    </button>
-    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white px-6">
-      <p class="py-4 text-gray-700">
-        The Caesar cipher shifts each letter in the plaintext by a fixed
-        number of positions down the alphabet. For example, with a shift
-        of 3, A becomes D, B becomes E, and so on.
-      </p>
-    </div>
-  </div>
+For each letter in the plaintext:
 
-  <div class="border rounded-lg overflow-hidden">
-  <button class="w-full px-6 py-4 text-left flex justify-between items-center font-semibold text-lg bg-gray-100 hover:bg-gray-200 transition" onclick="toggleAccordion(this)">
-    How does RSA Encryption work?
-    <span class="transform transition-transform duration-300">&#9662;</span>
-  </button>
-  <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white px-6">
-    <p class="py-4 text-gray-700">
-      RSA is a public-key cryptosystem that uses two large prime numbers to generate 
-      a public and private key pair. It's based on the mathematical difficulty of 
-      factoring large composite numbers. The public key encrypts messages, while 
-      only the corresponding private key can decrypt them.
-    </p>
-  </div>
-</div>
+Shift it forward in the alphabet by 3 positions.
 
+Wrap around if necessary (e.g., Z becomes C with a shift of +3).
+              </p>
+            </div>
+          </div>
+          <div class="border rounded-lg overflow-hidden">
+            <button
+              class="w-full px-6 py-4 text-left flex justify-between items-center font-semibold text-lg bg-gray-100 hover:bg-gray-200 transition"
+              onclick="toggleAccordion(this)"
+            >
+              How does RSA Encryption work?
+              <span class="transform transition-transform duration-300">&#9662;</span>
+            </button>
+            <div
+              class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white px-6"
+            >
+              <p class="py-4 text-gray-700">
+               Great question! RSA encryption is a widely-used asymmetric encryption algorithm. Unlike the Caesar cipher (which is simple and symmetric), RSA is secure, mathematical, and uses two keys: a public key to encrypt and a private key to decrypt.
+              </p>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
-     <footer class="bg-blue-200 pt-16 pb-8">
+    <footer class="bg-blue-200 pt-16 pb-8">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-3 gap-8 mb-12">
           <div>
-              <img src="../image/math.png" alt="Logo" class="h-24 w-24" />
+            <img src="../image/ruppno.png" alt="Logo" class="h-20 w-20" />
             <p class="text-gray-600 mb-4">
-              A comprehensive platform for exploring discrete mathematics
-              concepts through interactive tools and resources.
+              A comprehensive platform for exploring discrete mathematics concepts through interactive tools and
+              resources.
             </p>
             <div class="flex space-x-4">
               <a
@@ -516,23 +496,15 @@
             </div>
           </div>
           <div>
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">
-              Quick Links
-            </h3>
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
             <ul class="space-y-2">
               <li>
-                <a
-                  href="#tools"
-                  data-readdy="true"
-                  class="text-gray-600 hover:text-primary"
+                <a href="#tools" data-readdy="true" class="text-gray-600 hover:text-primary"
                   >Cryptography Tools</a
                 >
               </li>
               <li>
-                <a
-                  href="#numbers"
-                  data-readdy="true"
-                  class="text-gray-600 hover:text-primary"
+                <a href="#numbers" data-readdy="true" class="text-gray-600 hover:text-primary"
                   >Number Theory</a
                 >
               </li>
@@ -582,44 +554,34 @@
               <li class="flex items-start">
                 <i class="ri-map-pin-line text-primary mt-1 mr-2"></i>
                 <span class="text-gray-600"
-                  >The Royal University of Phnom Penh Russian Federation
-                  Boulevard, Toul Kork, Phnom Penh, Cambodia.</span
+                  >The Royal University of Phnom Penh Russian Federation Boulevard, Toul Kork, Phnom Penh,
+                  Cambodia.</span
                 >
               </li>
             </ul>
           </div>
         </div>
         <div class="pt-8 border-t border-gray-200 text-center">
-          <p class="text-gray-500 text-sm">
-            © 2025 Discrete Mathematics Learning Platform. All rights reserved.
-          </p>
+          <p class="text-gray-500 text-sm">© 2025 Discrete Mathematics Learning Platform. All rights reserved.</p>
         </div>
       </div>
     </footer>
-
-
-
-
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         // Tabs logic
         const tabButtons = document.querySelectorAll(".tab-btn");
         const tabContents = document.querySelectorAll(".tab-content");
-
         tabButtons.forEach((btn) => {
           btn.addEventListener("click", () => {
             const target = btn.getAttribute("data-tab");
-
             // Remove active class on all buttons and contents
             tabButtons.forEach((b) => b.classList.remove("active"));
             tabContents.forEach((c) => {
               c.classList.add("hidden");
               c.classList.remove("active");
             });
-
             // Add active class to clicked button
             btn.classList.add("active");
-
             // Show the target tab content
             const activeTab = document.getElementById(`${target}-tab`);
             activeTab.classList.remove("hidden");
@@ -642,7 +604,6 @@
           if (isNaN(shift)) return "Please enter a valid numeric key";
           shift = ((shift % 26) + 26) % 26;
           if (decrypt) shift = (26 - shift) % 26;
-
           return text
             .split("")
             .map((char) => {
@@ -673,19 +634,16 @@
         }
 
         caesarKeyInput.addEventListener("input", validateCaesarKey);
-
         caesarEncryptBtn.addEventListener("click", function () {
           if (!validateCaesarKey()) return;
           const encrypted = caesarCipher(caesarMessageInput.value, caesarKeyInput.value, false);
           caesarResultArea.textContent = encrypted;
         });
-
         caesarDecryptBtn.addEventListener("click", function () {
           if (!validateCaesarKey()) return;
           const decrypted = caesarCipher(caesarMessageInput.value, caesarKeyInput.value, true);
           caesarResultArea.textContent = decrypted;
         });
-
         caesarClearBtn.addEventListener("click", function () {
           caesarMessageInput.value = "";
           caesarKeyInput.value = "";
@@ -703,15 +661,10 @@
         const vigenereResultArea = document.getElementById("vigenere-result");
         const vigenereKeyError = document.getElementById("vigenere-key-error");
 
-        // Vigenère cipher function
-        // Only encrypts/decrypts letters, ignores others but keeps them
-        // Case-preserving
         function vigenereCipher(text, key, decrypt = false) {
           if (text.trim() === "") return "";
-
           key = key.toUpperCase().replace(/[^A-Z]/g, "");
           if (key.length === 0) return "Please enter a valid key (letters only)";
-
           let result = "";
           let keyIndex = 0;
           for (let i = 0; i < text.length; i++) {
@@ -720,16 +673,11 @@
               const charCode = char.charCodeAt(0);
               const keyCharCode = key.charCodeAt(keyIndex % key.length) - 65;
               let base = charCode >= 65 && charCode <= 90 ? 65 : 97;
-
               if (decrypt) {
-                // Decryption shifts backwards
-                const shifted =
-                  (charCode - base - keyCharCode + 26) % 26 + base;
+                const shifted = (charCode - base - keyCharCode + 26) % 26 + base;
                 result += String.fromCharCode(shifted);
               } else {
-                // Encryption shifts forwards
-                const shifted =
-                  (charCode - base + keyCharCode) % 26 + base;
+                const shifted = (charCode - base + keyCharCode) % 26 + base;
                 result += String.fromCharCode(shifted);
               }
               keyIndex++;
@@ -753,19 +701,16 @@
         }
 
         vigenereKeyInput.addEventListener("input", validateVigenereKey);
-
         vigenereEncryptBtn.addEventListener("click", function () {
           if (!validateVigenereKey()) return;
           const encrypted = vigenereCipher(vigenereMessageInput.value, vigenereKeyInput.value, false);
           vigenereResultArea.textContent = encrypted;
         });
-
         vigenereDecryptBtn.addEventListener("click", function () {
           if (!validateVigenereKey()) return;
           const decrypted = vigenereCipher(vigenereMessageInput.value, vigenereKeyInput.value, true);
           vigenereResultArea.textContent = decrypted;
         });
-
         vigenereClearBtn.addEventListener("click", function () {
           vigenereMessageInput.value = "";
           vigenereKeyInput.value = "";
@@ -773,264 +718,333 @@
           vigenereKeyInput.classList.remove("border-red-500");
           vigenereKeyError.classList.add("hidden");
         });
+
+        // --- RSA Cipher Elements ---
+        const rsaMessageInput = document.getElementById("rsa-message");
+        const rsaPublicKeyInput = document.getElementById("rsa-public-key");
+        const rsaPrivateKeyInput = document.getElementById("rsa-private-key");
+        const rsaEncryptBtn = document.getElementById("rsa-encrypt-btn");
+        const rsaDecryptBtn = document.getElementById("rsa-decrypt-btn");
+        const rsaClearBtn = document.getElementById("rsa-clear-btn");
+        const rsaGenerateKeysBtn = document.getElementById("rsa-generate-keys-btn");
+        const rsaResultArea = document.getElementById("rsa-result");
+        const rsaKeyError = document.getElementById("rsa-key-error");
+
+        // RSA utility functions
+        function gcd(a, b) {
+          while (b !== 0) {
+            let temp = b;
+            b = a % b;
+            a = temp;
+          }
+          return a;
+        }
+
+        function modInverse(a, m) {
+          if (gcd(a, m) !== 1) return null;
+          let u1 = 1,
+            u2 = 0,
+            u3 = a;
+          let v1 = 0,
+            v2 = 1,
+            v3 = m;
+          while (v3 !== 0) {
+            let q = Math.floor(u3 / v3);
+            let t1 = u1 - q * v1,
+              t2 = u2 - q * v2,
+              t3 = u3 - q * v3;
+            u1 = v1;
+            u2 = v2;
+            u3 = v3;
+            v1 = t1;
+            v2 = t2;
+            v3 = t3;
+          }
+          return u1 < 0 ? u1 + m : u1;
+        }
+
+        function isPrime(n) {
+          if (n < 2) return false;
+          if (n === 2) return true;
+          if (n % 2 === 0) return false;
+          for (let i = 3; i * i <= n; i += 2) {
+            if (n % i === 0) return false;
+          }
+          return true;
+        }
+
+        function getRandomPrime(min, max) {
+          let num;
+          do {
+            num = Math.floor(Math.random() * (max - min + 1)) + min;
+          } while (!isPrime(num));
+          return num;
+        }
+
+        function modPow(base, exp, mod) {
+          let result = 1;
+          base = base % mod;
+          while (exp > 0) {
+            if (exp % 2 === 1) {
+              result = (result * base) % mod;
+            }
+            exp = Math.floor(exp / 2);
+            base = (base * base) % mod;
+          }
+          return result;
+        }
+
+        // RSA specific helpers for block encryption/decryption
+        function charToNumericValue(char) {
+          const code = char.toUpperCase().charCodeAt(0); // Convert to uppercase for consistent mapping
+          if (code >= 65 && code <= 90) {
+            return code - 65; // A=0, B=1, ..., Z=25
+          }
+          return -1; // Not an alphabetic character
+        }
+
+        function numericValueToChar(num) {
+          if (num >= 0 && num <= 25) {
+            return String.fromCharCode(65 + num); // 0=A, 1=B, ..., 25=Z
+          }
+          return ""; // Invalid number
+        }
+
+        function textToRSAEncryptBlocks(text, n) {
+          const cleanedText = text.replace(/[^a-zA-Z]/g, ""); // Only keep letters
+          let numericString = "";
+          for (let i = 0; i < cleanedText.length; i++) {
+            const numVal = charToNumericValue(cleanedText[i]);
+            if (numVal !== -1) {
+              numericString += String(numVal).padStart(2, "0"); // Ensure 2 digits (e.g., A=00, B=01)
+            }
+          }
+
+          const blocks = [];
+          // Group into 4-digit blocks (representing two 2-digit character codes)
+          for (let i = 0; i < numericString.length; i += 4) {
+            let blockStr = numericString.substring(i, i + 4);
+            if (blockStr.length < 4 && blockStr.length > 0) {
+              // Pad incomplete last block with '0's to make it 4 digits
+              blockStr = blockStr.padEnd(4, "0");
+            }
+            if (blockStr.length === 4) {
+              const blockNum = Number.parseInt(blockStr);
+              if (blockNum >= n) {
+                // This case should ideally be handled by choosing larger primes,
+                // but for this simplified demo, we'll return an error.
+                return `Error: Block value ${blockNum} is too large for modulus ${n}. Cannot encrypt.`;
+              }
+              blocks.push(blockNum);
+            }
+          }
+          return blocks;
+        }
+
+        function rsaEncryptProcess(message, key, isDecrypt = false) {
+          if (message.trim() === "") return "";
+
+          try {
+            const { n, e: exponent, d } = key;
+            const keyValue = isDecrypt ? d : exponent;
+
+            if (!n || !keyValue) {
+              return "Invalid key format";
+            }
+
+            if (isDecrypt) {
+              // Decrypt: input should be comma-separated numbers
+              const numbers = message.split(",").map((num) => parseInt(num.trim()));
+              if (numbers.some(isNaN)) {
+                return "Invalid encrypted format. Expected comma-separated numbers.";
+              }
+
+              let decryptedNumericString = "";
+              for (let c of numbers) {
+                if (c >= n) {
+                  return `Error: Encrypted value ${c} is too large for modulus ${n}. Cannot decrypt.`;
+                }
+                const m = modPow(c, keyValue, n);
+                decryptedNumericString += String(m).padStart(4, "0"); // Pad to 4 digits (e.g., 0102 for AB)
+              }
+
+              let decryptedText = "";
+              for (let i = 0; i < decryptedNumericString.length; i += 2) {
+                const twoDigits = decryptedNumericString.substring(i, i + 2);
+                if (twoDigits.length === 2) {
+                  const numVal = Number.parseInt(twoDigits);
+                  decryptedText += numericValueToChar(numVal);
+                }
+              }
+              return decryptedText;
+            } else {
+              // Encrypt: convert each character to number and then group into blocks
+              const blocks = textToRSAEncryptBlocks(message, n);
+              if (typeof blocks === 'string') { // Check if textToRSAEncryptBlocks returned an error string
+                return blocks;
+              }
+              if (blocks.length === 0 && message.trim() !== "") {
+                return "Could not form valid encryption blocks. Ensure message contains letters.";
+              }
+
+              const encryptedBlocks = [];
+              for (const block of blocks) {
+                encryptedBlocks.push(modPow(block, keyValue, n));
+              }
+              return encryptedBlocks.join(", ");
+            }
+          } catch (error) {
+            return "Error processing: " + error.message;
+          }
+        }
+
+        // Parse key string (format: "n,e" or "n,d")
+        function parseKey(keyString) {
+          const parts = keyString.trim().split(",");
+          if (parts.length !== 2) return null;
+
+          const n = parseInt(parts[0].trim());
+          const exp = parseInt(parts[1].trim());
+
+          if (isNaN(n) || isNaN(exp)) return null;
+
+          return { n, e: exp, d: exp }; // e and d are the same field for simplicity
+        }
+
+        function validateRSAKeys() {
+          const publicKeyText = rsaPublicKeyInput.value.trim();
+          const privateKeyText = rsaPrivateKeyInput.value.trim();
+          let isValid = true;
+          let errorMessage = "";
+
+          rsaPublicKeyInput.classList.remove("border-red-500");
+          rsaPrivateKeyInput.classList.remove("border-red-500");
+          rsaKeyError.classList.add("hidden");
+          rsaKeyError.textContent = "";
+
+          if (publicKeyText === "" && privateKeyText === "") {
+            rsaPublicKeyInput.classList.add("border-red-500");
+            rsaPrivateKeyInput.classList.add("border-red-500");
+            errorMessage = "Please enter at least one key or generate keys";
+            isValid = false;
+          } else {
+            if (publicKeyText && !parseKey(publicKeyText)) {
+              rsaPublicKeyInput.classList.add("border-red-500");
+              errorMessage = "Public key format should be: n,e (example: 2537,13)";
+              isValid = false;
+            }
+
+            if (privateKeyText && !parseKey(privateKeyText)) {
+              rsaPrivateKeyInput.classList.add("border-red-500");
+              if (errorMessage) errorMessage += "\n"; // Add newline if there's a previous error
+              errorMessage += "Private key format should be: n,d (example: 2537,107)";
+              isValid = false;
+            }
+          }
+
+          if (!isValid) {
+            rsaKeyError.textContent = errorMessage;
+            rsaKeyError.classList.remove("hidden");
+          }
+          return isValid;
+        }
+
+        // Event listeners
+        rsaPublicKeyInput.addEventListener("input", validateRSAKeys);
+        rsaPrivateKeyInput.addEventListener("input", validateRSAKeys);
+
+        rsaGenerateKeysBtn.addEventListener("click", function () {
+          const p = getRandomPrime(50, 200);
+          let q;
+          do {
+            q = getRandomPrime(50, 200);
+          } while (q === p);
+
+          const n = p * q;
+          const phi = (p - 1) * (q - 1);
+
+          let e = 3;
+          while (gcd(e, phi) !== 1) {
+            e += 2;
+          }
+
+          const d = modInverse(e, phi);
+          if (d === null) {
+            rsaResultArea.textContent = "Error: Could not generate a valid private key (d). Try again.";
+            return;
+          }
+
+          rsaPublicKeyInput.value = `${n},${e}`;
+          rsaPrivateKeyInput.value = `${n},${d}`;
+          validateRSAKeys();
+        });
+
+        rsaEncryptBtn.addEventListener("click", function () {
+          if (!validateRSAKeys()) return;
+
+          const publicKeyText = rsaPublicKeyInput.value.trim();
+          if (!publicKeyText) {
+            rsaResultArea.textContent = "Public key required for encryption";
+            return;
+          }
+
+          const publicKey = parseKey(publicKeyText);
+          if (!publicKey) {
+            rsaResultArea.textContent = "Invalid public key format.";
+            return;
+          }
+
+          const encrypted = rsaEncryptProcess(rsaMessageInput.value, publicKey, false);
+          rsaResultArea.textContent = encrypted;
+        });
+
+        rsaDecryptBtn.addEventListener("click", function () {
+          if (!validateRSAKeys()) return;
+
+          const privateKeyText = rsaPrivateKeyInput.value.trim();
+          if (!privateKeyText) {
+            rsaResultArea.textContent = "Private key required for decryption";
+            return;
+          }
+
+          const privateKey = parseKey(privateKeyText);
+          if (!privateKey) {
+            rsaResultArea.textContent = "Invalid private key format.";
+            return;
+          }
+
+          const decrypted = rsaEncryptProcess(rsaMessageInput.value, privateKey, true);
+          rsaResultArea.textContent = decrypted;
+        });
+
+        rsaClearBtn.addEventListener("click", function () {
+          rsaMessageInput.value = "";
+          rsaPublicKeyInput.value = "";
+          rsaPrivateKeyInput.value = "";
+          rsaResultArea.textContent = "";
+          rsaPublicKeyInput.classList.remove("border-red-500");
+          rsaPrivateKeyInput.classList.remove("border-red-500");
+          rsaKeyError.classList.add("hidden");
+        });
       });
 
-
-
-
-      // --- RSA Cipher Elements ---
-const rsaMessageInput = document.getElementById("rsa-message");
-const rsaPublicKeyInput = document.getElementById("rsa-public-key");
-const rsaPrivateKeyInput = document.getElementById("rsa-private-key");
-const rsaEncryptBtn = document.getElementById("rsa-encrypt-btn");
-const rsaDecryptBtn = document.getElementById("rsa-decrypt-btn");
-const rsaClearBtn = document.getElementById("rsa-clear-btn");
-const rsaGenerateKeysBtn = document.getElementById("rsa-generate-keys-btn");
-const rsaResultArea = document.getElementById("rsa-result");
-const rsaKeyError = document.getElementById("rsa-key-error");
-     
-       // RSA utility functions
-function gcd(a, b) {
-  while (b !== 0) {
-    let temp = b;
-    b = a % b;
-    a = temp;
-  }
-  return a;
-}
-
-function modInverse(a, m) {
-  if (gcd(a, m) !== 1) return null;
-  let u1 = 1, u2 = 0, u3 = a;
-  let v1 = 0, v2 = 1, v3 = m;
-  while (v3 !== 0) {
-    let q = Math.floor(u3 / v3);
-    let t1 = u1 - q * v1, t2 = u2 - q * v2, t3 = u3 - q * v3;
-    u1 = v1; u2 = v2; u3 = v3;
-    v1 = t1; v2 = t2; v3 = t3;
-  }
-  return u1 < 0 ? u1 + m : u1;
-}
-
-function isPrime(n) {
-  if (n < 2) return false;
-  if (n === 2) return true;
-  if (n % 2 === 0) return false;
-  for (let i = 3; i * i <= n; i += 2) {
-    if (n % i === 0) return false;
-  }
-  return true;
-}
-
-function getRandomPrime(min, max) {
-  let num;
-  do {
-    num = Math.floor(Math.random() * (max - min + 1)) + min;
-  } while (!isPrime(num));
-  return num;
-}
-
-function modPow(base, exp, mod) {
-  let result = 1;
-  base = base % mod;
-  while (exp > 0) {
-    if (exp % 2 === 1) {
-      result = (result * base) % mod;
-    }
-    exp = Math.floor(exp / 2);
-    base = (base * base) % mod;
-  }
-  return result;
-}
-
-// Generate RSA key pair
-function generateRSAKeys() {
-  // Use small primes for demonstration (not secure for real use)
-  const p = getRandomPrime(50, 200);
-  let q;
-  do {
-    q = getRandomPrime(50, 200);
-  } while (q === p);
-  
-  const n = p * q;
-  const phi = (p - 1) * (q - 1);
-  
-  // Choose e (commonly 65537, but we'll use smaller values for demo)
-  let e = 3;
-  while (gcd(e, phi) !== 1) {
-    e += 2;
-  }
-  
-  // Calculate d
-  const d = modInverse(e, phi);
-  
-  return {
-    publicKey: { n, e },
-    privateKey: { n, d }
-  };
-}
-
-// RSA encryption/decryption
-function rsaProcess(text, key, isDecrypt = false) {
-  if (text.trim() === "") return "";
-  
-  try {
-    const { n, e: exponent, d } = key;
-    const keyValue = isDecrypt ? d : exponent;
-    
-    if (!n || !keyValue) {
-      return "Invalid key format";
-    }
-    
-    if (isDecrypt) {
-      // Decrypt: input should be comma-separated numbers
-      const numbers = text.split(',').map(num => parseInt(num.trim()));
-      if (numbers.some(isNaN)) {
-        return "Invalid encrypted format. Expected comma-separated numbers.";
-      }
-      
-      let result = "";
-      for (let num of numbers) {
-        if (num >= n) {
-          return "Error: Encrypted value too large for key";
+      // Accordion logic
+      function toggleAccordion(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector("span");
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          icon.style.transform = "rotate(0deg)";
+        } else {
+          document.querySelectorAll(".accordion-content").forEach((el) => {
+            el.style.maxHeight = null;
+            el.previousElementSibling.querySelector("span").style.transform = "rotate(0deg)";
+          });
+          content.style.maxHeight = content.scrollHeight + "px";
+          icon.style.transform = "rotate(180deg)";
         }
-        const decrypted = modPow(num, keyValue, n);
-        result += String.fromCharCode(decrypted);
       }
-      return result;
-    } else {
-      // Encrypt: convert each character to number
-      let result = [];
-      for (let i = 0; i < text.length; i++) {
-        const charCode = text.charCodeAt(i);
-        if (charCode >= n) {
-          return `Error: Character '${text[i]}' (${charCode}) too large for key modulus (${n})`;
-        }
-        const encrypted = modPow(charCode, keyValue, n);
-        result.push(encrypted);
-      }
-      return result.join(', ');
-    }
-  } catch (error) {
-    return "Error processing: " + error.message;
-  }
-}
-
-// Parse key string (format: "n,e" or "n,d")
-function parseKey(keyString) {
-  const parts = keyString.trim().split(',');
-  if (parts.length !== 2) return null;
-  
-  const n = parseInt(parts[0].trim());
-  const exp = parseInt(parts[1].trim());
-  
-  if (isNaN(n) || isNaN(exp)) return null;
-  
-  return { n, e: exp, d: exp }; // e and d are the same field for simplicity
-}
-
-function validateRSAKeys() {
-  const publicKeyText = rsaPublicKeyInput.value.trim();
-  const privateKeyText = rsaPrivateKeyInput.value.trim();
-  
-  if (publicKeyText === "" && privateKeyText === "") {
-    rsaPublicKeyInput.classList.add("border-red-500");
-    rsaPrivateKeyInput.classList.add("border-red-500");
-    rsaKeyError.classList.remove("hidden");
-    rsaKeyError.textContent = "Please enter at least one key or generate keys";
-    return false;
-  }
-  
-  // Check if keys are in correct format (n,e or n,d)
-  if (publicKeyText && !parseKey(publicKeyText)) {
-    rsaPublicKeyInput.classList.add("border-red-500");
-    rsaKeyError.classList.remove("hidden");
-    rsaKeyError.textContent = "Public key format should be: n,e (example: 323,3)";
-    return false;
-  }
-  
-  if (privateKeyText && !parseKey(privateKeyText)) {
-    rsaPrivateKeyInput.classList.add("border-red-500");
-    rsaKeyError.classList.remove("hidden");
-    rsaKeyError.textContent = "Private key format should be: n,d (example: 323,107)";
-    return false;
-  }
-  
-  rsaPublicKeyInput.classList.remove("border-red-500");
-  rsaPrivateKeyInput.classList.remove("border-red-500");
-  rsaKeyError.classList.add("hidden");
-  return true;
-}
-
-
-// Event listeners
-rsaPublicKeyInput.addEventListener("input", validateRSAKeys);
-rsaPrivateKeyInput.addEventListener("input", validateRSAKeys);
-
-rsaGenerateKeysBtn.addEventListener("click", function() {
-  const keys = generateRSAKeys();
-  rsaPublicKeyInput.value = `${keys.publicKey.n},${keys.publicKey.e}`;
-  rsaPrivateKeyInput.value = `${keys.privateKey.n},${keys.privateKey.d}`;
-  validateRSAKeys();
-});
-
-rsaEncryptBtn.addEventListener("click", function() {
-  if (!validateRSAKeys()) return;
-  
-  const publicKeyText = rsaPublicKeyInput.value.trim();
-  if (!publicKeyText) {
-    rsaResultArea.textContent = "Public key required for encryption";
-    return;
-  }
-  
-  const publicKey = parseKey(publicKeyText);
-  const encrypted = rsaProcess(rsaMessageInput.value, publicKey, false);
-  rsaResultArea.textContent = encrypted;
-});
-
-rsaDecryptBtn.addEventListener("click", function() {
-  if (!validateRSAKeys()) return;
-  
-  const privateKeyText = rsaPrivateKeyInput.value.trim();
-  if (!privateKeyText) {
-    rsaResultArea.textContent = "Private key required for decryption";
-    return;
-  }
-  
-  const privateKey = parseKey(privateKeyText);
-  const decrypted = rsaProcess(rsaMessageInput.value, privateKey, true);
-  rsaResultArea.textContent = decrypted;
-});
-
-rsaClearBtn.addEventListener("click", function() {
-  rsaMessageInput.value = "";
-  rsaPublicKeyInput.value = "";
-  rsaPrivateKeyInput.value = "";
-  rsaResultArea.textContent = "";
-  rsaPublicKeyInput.classList.remove("border-red-500");
-  rsaPrivateKeyInput.classList.remove("border-red-500");
-  rsaKeyError.classList.add("hidden");
-});
     </script>
-    <script>
-  function toggleAccordion(button) {
-    const content = button.nextElementSibling;
-    const icon = button.querySelector('span');
-
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-      icon.style.transform = "rotate(0deg)";
-    } else {
-      document.querySelectorAll('.accordion-content').forEach(el => {
-        el.style.maxHeight = null;
-        el.previousElementSibling.querySelector('span').style.transform = "rotate(0deg)";
-      });
-      content.style.maxHeight = content.scrollHeight + "px";
-      icon.style.transform = "rotate(180deg)";
-    }
-  }
-</script>
-
   </body>
 </html>
 
